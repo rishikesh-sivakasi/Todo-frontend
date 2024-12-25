@@ -1,0 +1,191 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.full{
+    background: linear-gradient(to bottom right, rgb(235, 234, 255), rgb(150, 148, 255));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 729px
+}
+
+
+.container {
+    perspective: 1000px;
+    width: 300px;
+    margin: 100px auto;
+ }
+
+ .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 410px;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+    position: relative;
+ }
+
+ 
+ .front, .back , .forget-password{
+     width: 100%;
+     height: 100%;
+     position: absolute;
+     backface-visibility: hidden;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     background: #f1f1f1;
+     border: 1px solid #ccc;
+     border-radius: 10px;
+     padding: 20px;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+ }
+
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.forget-password {
+    transform: rotateY(90deg);
+}
+
+.rotate {
+    cursor: pointer;
+    text-decoration: underline;
+    color: blue;
+}
+ .card.flipped {
+    transform: rotateY(180deg);
+ }
+
+
+.card.flipped-to-forget {
+    transform: rotateY(-90deg);
+}
+
+ .signupinput{
+     margin: 4px 0;
+     width: 95%;
+     padding: 8px;
+     border: 1px solid rgb(150, 148, 255);
+     border-radius: 5px;
+ }
+
+ .input{
+    margin: 4px 0;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid rgb(150, 148, 255);
+    border-radius: 5px;
+}
+
+ .signupButton {
+    width: 50%;
+    padding: 10px;
+    margin-left: 85px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(61, 59, 243);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+ Button {
+    width: 50%;
+    padding: 10px;
+    margin-left: 64px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(61, 59, 243);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(150, 148, 255);
+}
+
+.error {
+    color: rgb(255, 41, 41);
+    font-size: 14px;
+    margin-top: -10px;
+}
+
+.back p {
+    margin-top: -5px;
+}
+
+form{
+    margin-top: -20px;
+}
+
+.forgetButton{
+    margin-left: 80px;
+}
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    visibility: hidden;
+  }
+
+  .loading-overlay .loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top: 5px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .input-container {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .input-container input {
+    width: 102%;
+    padding: 10px;
+    padding-right: 40px; 
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+  
+  .input-container .toggle-password , .input-container .sign-toggle-password,
+  .input-container .forget-new-toggle-password,.input-container .forget-con-toggle-password{
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #888;
+  }
+  

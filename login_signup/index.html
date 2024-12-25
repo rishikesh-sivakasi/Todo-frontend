@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Todo App</title>
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+     <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="full">
+
+    
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loader"></div>
+      </div>
+      
+     <div class="container">
+         <div class="card">
+             <!-- Login Form -->
+             <div class="front">
+                 <h2>Login</h2><br><br>
+                 <form id="loginForm">
+                     Email Id: <input type="email" id="loginEmail" name="email" class="input">
+                     <span id="loginEmailError" class="error"></span><br><br>
+                     
+                     <label for="loginPassword">Password:</label>
+                     <div class="input-container">
+                        <input type="password" id="loginPassword" name="password" class="input" style="width: 105%;">
+                        <span class="toggle-password" onclick="togglePasswordVisibility()">
+                          <i class='bx bx-show-alt'></i>
+                        </span>
+                      </div>
+                     <span id="loginPasswordError" class="error"></span><br>
+                     
+                     <button class="loginButton">Submit</button>
+                 </form><br>
+                 <span class="rotate" style="padding-top: 10px;" onclick="rotateToForgetPassword()">Forget Password</span>      
+                 <p style="padding-top: 20px;">If you don't have an account <span class="rotate" onclick="rotate()">Sign Up</span></p>
+             </div>
+
+             <!-- Signup Form -->
+             <div class="back">
+                 <h2>Sign Up</h2><br>
+                 <form id="signupForm">
+                     UserName: <input type="text" id="signupUserName" name="userName" class="signupinput">
+                     <span id="signupNameError" class="error"></span><br>
+                     
+                     Email Id: <input type="email" id="signupEmail" name="email" class="signupinput">
+                     <span id="signupEmailError" class="error"></span><br>
+                     
+                     Password: 
+                     <div class="input-container">
+                        <input type="password" id="signupPassword" name="password" class="input" >
+                        <span class="sign-toggle-password" onclick="toggleSignPasswordVisibility()">
+                          <i class='bx bx-show-alt'></i>
+                        </span>
+                      </div>
+                    <span id="signupPasswordError" class="error"></span><br>
+
+                     What is your nickname: <input type="text" id="signupSecurity" name="security" class="signupinput" required>
+                     
+                     <button class="signupButton">Submit</button>
+                 </form><br>
+                 <p>Already have an account? <span class="rotate" onclick="rotateBack()">Login</span></p>
+             </div>
+
+             <!-- Forget Password Form -->
+             <div class="forget-password" id="forget-password">
+                 <h2>Forget Password</h2><br>
+                 <form id="forgetPasswordForm">
+                     Email Id: <input type="email" id="forgetEmail" name="email" class="signupinput">
+                     <span id="forgetEmailError" class="error"></span><br>
+                     
+                     What is your nickname: <input type="text" id="forgetSecurity" name="security" class="signupinput" required>
+                     <span id="forgetSecurityError" class="error"></span><br>
+
+                     New Password: 
+                     <div class="input-container">
+                        <input type="password" id="newPassword" name="newPassword" class="input" >
+                        <span class="forget-new-toggle-password" onclick="toggleForgetNewPasswordVisibility()">
+                          <i class='bx bx-show-alt'></i>
+                        </span>
+                      </div>
+                     <span id="forgetNewPasswordError" class="error"></span><br>
+
+                     Confirm Password: 
+                     <div class="input-container">
+                        <input type="password" id="confirmPassword" name="confirmPassword" class="input" >
+                        <span class="forget-con-toggle-password" onclick="toggleForgetConPasswordVisibility()">
+                          <i class='bx bx-show-alt'></i>
+                        </span>
+                    </div>
+                     <span id="forgetConfirmPasswordError" class="error"></span><br>
+                     
+                     <button class="forgetButton">Submit</button>
+                 </form>
+                 <p>Back to <span class="rotate" onclick="rotateBack()">Login</span></p>
+             </div>
+         </div>
+     </div>
+    </div>
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+     <script src="index.js"></script>
+</body>
+</html>
